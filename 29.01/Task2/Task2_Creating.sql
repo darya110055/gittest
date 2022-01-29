@@ -1,17 +1,3 @@
--- --------------------------------------------------------
--- Хост:                         127.0.0.1
--- Версия сервера:               10.4.18-MariaDB - mariadb.org binary distribution
--- Операционная система:         Win64
--- HeidiSQL Версия:              10.2.0.5599
--- --------------------------------------------------------
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-
-
 -- Дамп структуры базы данных retail
 CREATE DATABASE IF NOT EXISTS `retail` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `retail`;
@@ -23,11 +9,6 @@ CREATE TABLE IF NOT EXISTS `product` (
   KEY `code_product` (`code_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Дамп данных таблицы retail.product: ~0 rows (приблизительно)
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
-
--- Дамп структуры для таблица retail.sales
 CREATE TABLE IF NOT EXISTS `sales` (
   `CodeSales` int(11) NOT NULL,
   `CodeProduct` int(11) NOT NULL,
@@ -39,11 +20,6 @@ CREATE TABLE IF NOT EXISTS `sales` (
   CONSTRAINT `FK_sales_product` FOREIGN KEY (`CodeProduct`) REFERENCES `product` (`code_product`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Дамп данных таблицы retail.sales: ~0 rows (приблизительно)
-/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
-/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
-
--- Дамп структуры для таблица retail.supplier
 CREATE TABLE IF NOT EXISTS `supplier` (
   `code_supplier` int(11) NOT NULL,
   `NameSupplier` text DEFAULT NULL,
@@ -53,11 +29,6 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   KEY `code_supplier` (`code_supplier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Дамп данных таблицы retail.supplier: ~0 rows (приблизительно)
-/*!40000 ALTER TABLE `supplier` DISABLE KEYS */;
-/*!40000 ALTER TABLE `supplier` ENABLE KEYS */;
-
--- Дамп структуры для таблица retail.supply
 CREATE TABLE IF NOT EXISTS `supply` (
   `CodeSupply` int(11) NOT NULL,
   `CodeProduct` int(11) NOT NULL,
@@ -72,10 +43,3 @@ CREATE TABLE IF NOT EXISTS `supply` (
   CONSTRAINT `FK_supply_supplier` FOREIGN KEY (`CodeSupplier`) REFERENCES `supplier` (`code_supplier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Дамп данных таблицы retail.supply: ~0 rows (приблизительно)
-/*!40000 ALTER TABLE `supply` DISABLE KEYS */;
-/*!40000 ALTER TABLE `supply` ENABLE KEYS */;
-
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
