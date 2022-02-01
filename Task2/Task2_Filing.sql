@@ -1,4 +1,4 @@
-INSERT INTO `product` (`code_product`, `NameProduct`) VALUES
+INSERT INTO `product` (`CodeProduct`, `NameProduct`) VALUES
 	(2, 'изделие Б'),
 	(3, 'изделие В'),
 	(4, 'изделие Г'),
@@ -8,7 +8,7 @@ INSERT INTO `sales` (`CodeSales`, `CodeProduct`, `Date`, `Number`, `Price`) VALU
 	(3, 3, '2022-01-29', 1235, 123.00),
 	(4, 2, '2022-01-29', 45364, 748.00),
 	(1, 1, '2022-01-29', 45354, 231.00);
-INSERT INTO `supplier` (`code_supplier`, `NameSupplier`, `address`, `phone`, `contact`) VALUES
+INSERT INTO `supplier` (`CodeSupplier`, `NameSupplier`, `Address`, `Phone`, `Contact`) VALUES
 	(2, 'Кирилл', 'Ярославская область, город Лотошино, бульвар Косиора, 76', 2878765, 'Григорьева Варвара Яковлевна'),
 	(3, 'Милана', 'Свердловская область, город Щёлково, ул. Ленина, 55', 456788, 'Завьялов Кирилл Артемьевич'),
 	(1, 'Степан', 'Владимирская область, город Клин, проезд Ленина, 57', 564645, 'Ерофеева Николь Кирилловна');
