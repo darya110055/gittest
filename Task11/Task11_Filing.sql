@@ -27,5 +27,3 @@ INSERT INTO `receiving` (`CodeWorkers`, `CodeOveralls`, `Date`, `Painting`) VALU
 	(3, 1, '2022-02-01', 'gdg'),
 	(5, 4, '2022-02-01', 'dfg'),
 	(1, 2, '2022-02-01', 'dh');
-
-
