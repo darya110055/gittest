@@ -1,21 +1,21 @@
-INSERT INTO `diagnosis` (`CodeDiagnosis`, `Name`) VALUES
-	(1, 'насморк'),
-	(2, 'астма'),
-	(3, 'ковид'),
-	(4, 'диарея');
 INSERT INTO `doctor` (`CodeDoctor`, `FullName`, `Speciality`, `Category`) VALUES
 	(1, 'Ильин Артём Сергеевич', 'лор', 1),
 	(2, 'Ефимова София Никитична', 'педиатр', 1),
 	(3, 'Трофимов Андрей Аркадьевич', 'педиатр', 2),
 	(4, 'Данилов Матвей Константинович', 'кардиолог', 3),
 	(5, 'Басов Макар Лукич ', 'хирург', 2);
-INSERT INTO `coupon` (`CodeCoupon`, `Doctor`, `Date`, `Time`) VALUES
-    (1, 1, '2022-02-01', '12:09:56'),
-    (2, 1, '2022-02-01', '12:10:08'),
-    (3, 4, '2022-02-01', '12:10:23'),
-    (4, 2, '2022-02-01', '12:10:42'),
-    (5, 3, '2022-02-01', '12:10:53'),
-    (6, 3, '2022-02-01', '12:11:03');
+INSERT INTO `coupon` (`CodeCoupon`, `Doctor`, `Time`) VALUES
+	(1, 1, '12:09:56'),
+	(2, 1, '12:10:08'),
+	(3, 4, '12:10:23'),
+	(4, 2, '12:10:42'),
+	(5, 3, '12:10:53'),
+	(6, 3, '12:11:03');
+INSERT INTO `diagnosis` (`CodeDiagnosis`, `Name`) VALUES
+	(1, 'насморк'),
+	(2, 'астма'),
+	(3, 'ковид'),
+	(4, 'диарея');
 INSERT INTO `patients` (`NumberCard`, `FullName`, `DateBirth`, `Address`, `Gender`, `Sale`) VALUES
 	(1, 'Березин Арсений Евгеньевич', '2022-01-29', 'Челябинская область, город Орехово-Зуево, проезд Будапештсткая, 24', 'м', 0),
 	(2, 'Смирнова Мария Никитична', '2022-01-29', 'Новосибирская область, город Егорьевск, проезд Косиора, 16', 'ж', 12),
@@ -24,9 +24,9 @@ INSERT INTO `purpose` (`CodePurpose`, `Purpose`) VALUES
 	(1, 'консультация'),
 	(2, 'обследование'),
 	(3, 'лечение');
-INSERT INTO `reception` (`CodeCoupon`, `Purpose`, `Price`, `Patients`, `Pre-admissionDiagnosis`, `DiagnosisAfterAdmission`) VALUES
-	(2, 2, 45.00, 3, NULL, 1),
-	(3, 1, 45.00, 3, 1, 1),
-	(5, 1, 45.00, 2, NULL, 2),
-	(6, 1, 45.00, 1, NULL, 2),
-	(1, 3, 45.00, 1, 3, 3);
+INSERT INTO `reception` (`CodeCoupon`, `Date`, `Purpose`, `Price`, `Patients`, `Pre-admissionDiagnosis`, `DiagnosisAfterAdmission`) VALUES
+	(1, '2022-01-29', 3, 45.00, 1, 3, 3),
+	(2, '2022-01-29', 2, 45.00, 3, NULL, 1),
+	(3, '2022-01-29', 1, 45.00, 3, 1, 1),
+	(5, '2022-01-29', 1, 45.00, 2, NULL, 2),
+	(6, '2022-01-29', 1, 45.00, 1, NULL, 2);
