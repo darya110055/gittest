@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `cars` (
 
 
 CREATE TABLE IF NOT EXISTS `police_inspector` (
-  `PersonalNumber` int(11) NOT NULL,
+  `PersonalNumber` int(11) NOT NULL AUTO_INCREMENT,
   `FullName` text NOT NULL,
   `Pasport` int(11) NOT NULL,
   `Address` text NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `penalty` (
   `SizePenalty` decimal(2,1) NOT NULL,
   `FinesPaid` bit(1) NOT NULL,
   `DrivingLicensePeriod` int(11) NOT NULL,
-  `BasicValueViolation(thous.rubles)` int(11) NOT NULL,
+  `BasicValueViolation(thous.rubles)` decimal(10,2) NOT NULL,
   `PersNumberPoliceInspector` int(11) NOT NULL,
   PRIMARY KEY (`CodeViolation`,`DateViolation`,`DriversLicenseNumber`),
   KEY `FK_penalty_police_inspector` (`PersNumberPoliceInspector`),
